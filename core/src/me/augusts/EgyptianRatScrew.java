@@ -71,9 +71,9 @@ public class EgyptianRatScrew extends ApplicationAdapter {
 
         p1Label = new Label("21 Cards left", skin);
         p2Label = new Label("21 Cards left", skin);
-	    table.add(p1Label).padBottom(375).padRight(200);
+	    table.add(p1Label).padBottom(300).padRight(150);
 	    table.row();
-	    table.add(p2Label).padLeft(200);
+	    table.add(p2Label).padLeft(150);
 
         InputHandler inputHandler = new InputHandler();
 	    Gdx.input.setInputProcessor(inputHandler);
@@ -155,12 +155,12 @@ public class EgyptianRatScrew extends ApplicationAdapter {
             modelBatch.end();
 
             if(player1Status == Status.Deal) {
-                p1Label.setText(player1.playerDeck.size() + " Cards left" + "\n It's your turn");
-                p2Label.setText(player2.playerDeck.size() + " Cards left");
+                p1Label.setText("It's your turn\n" + player1.playerDeck.size() + " Cards left\n" + "To deal card press - A\n" + "To slap press - S");
+                p2Label.setText("To deal card press - K\n" + player2.playerDeck.size() + " Cards left\n" + "To slap press - L");
             }
             else {
-                p1Label.setText(player1.playerDeck.size() + " Cards left");
-                p2Label.setText(player2.playerDeck.size() + " Cards left" + "\n It's your turn");
+                p1Label.setText("To deal card press - A\n" + player1.playerDeck.size() + " Cards left\n" + "To slap press - S");
+                p2Label.setText("It's your turn\n" + player2.playerDeck.size() + " Cards left\n" + "To deal card press - K\n" + "To slap press - L");
             }
             stage.draw();
         }
